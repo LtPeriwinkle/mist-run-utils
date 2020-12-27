@@ -3,7 +3,9 @@ name = "mist-split-utils"
 version = "0.1.0"
 authors = ["LtPeriwinkle <not.yet.periwinkle@gmail.com>"]
 edition = "2018"
-
+description = "mist speedrun timer utilities"
+readme = "README.md"
+repository = "https://github.com/LtPeriwinkle/mist-run-utils"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies.ron]
