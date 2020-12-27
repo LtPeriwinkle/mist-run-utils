@@ -14,4 +14,11 @@ impl Run {
 		let run = from_reader(&file);
 		run.ok()
 	}
+	/// save the run to an msf file provided. no error handling yet unfortunately
+	/// creates the file if it does not exist
+	pub fn save_msf(&self, filename: &str) {
+		let mut file = OpenOptions::new().write(true).create(true).truncate(true).open(filename).unwrap();
+		let string = to_string_pretty(self, PrettyConfig::new()).unwrap();
+		file.write(&string.as_bytes()).unwrap();
+    	}
 }
