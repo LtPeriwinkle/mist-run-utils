@@ -2,6 +2,9 @@
 use crate::run::Run;
 use ron::de::from_reader;
 use std::fs::OpenOptions;
+use ron::ser::{PrettyConfig, to_string_pretty};
+use std::io::Write;
+
 impl Run {
     /// Create a run from an MSF (aka mist split file). If the file is malformed or a file error occurs, return None.
     /// Creates the file if it does not exist so it can be saved to when the timer is closed.
@@ -28,6 +31,6 @@ impl Run {
             .open(filename)
             .unwrap();
         let string = to_string_pretty(self, PrettyConfig::new()).unwrap();
-        file.write(&string.as_bytes()).unwrap();
+        file.write_all(&string.as_bytes()).unwrap();
     }
 }
