@@ -24,6 +24,9 @@ impl Run {
     pub fn set_pb(&mut self, pb: u128) {
         self.pb = pb;
     }
+    pub fn get_golds(&self) -> &Vec<u128> {
+	&self.gold_times
+    }
     pub fn gold_time(&self, index: usize) -> u128 {
         self.gold_times[index]
     }
