@@ -10,7 +10,7 @@ impl Run {
     /// Creates the file if it does not exist so it can be saved to when the timer is closed.
     pub fn from_msf_file(filename: &str) -> Option<Run> {
         let file: std::fs::File;
-        match OpenOptions::new().read(true).create(true).open(filename) {
+        match OpenOptions::new().read(true).write(true).create(true).open(filename) {
             Ok(x) => {
                 file = x;
             }
