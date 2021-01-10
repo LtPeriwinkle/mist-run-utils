@@ -12,6 +12,17 @@ pub struct Run {
 }
 
 impl Run {
+    pub fn new(game_title: String, category: String, offset: Option<u128>, pb: u128, splits: Vec<String>, pb_times: Vec<u128>, gold_times: Vec<u128>) -> Self {
+	Run {
+		game_title,
+		category,
+		offset,
+		pb,
+		splits,
+		pb_times,
+		gold_times
+    	}
+    }
     pub fn set_times(&mut self, splits: &Vec<u128>) {
         self.pb_times = splits.to_vec();
     }
