@@ -1,6 +1,8 @@
+#[cfg(feature = "msf")]
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Serialize, Deserialize)]
+#[cfg_attr(feature = "msf", derive(Serialize, Deserialize))]
+#[derive(Debug)]
 pub struct Run {
     game_title: String,
     category: String,
